@@ -1,0 +1,511 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		347F5D89158BA4840058BC21 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347F5D88158BA4840058BC21 /* UIKit.framework */; };
+		347F5D8B158BA4840058BC21 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347F5D8A158BA4840058BC21 /* Foundation.framework */; };
+		347F5D8D158BA4840058BC21 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347F5D8C158BA4840058BC21 /* CoreGraphics.framework */; };
+		347F5D93158BA4840058BC21 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 347F5D91158BA4840058BC21 /* InfoPlist.strings */; };
+		347F5D95158BA4840058BC21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 347F5D94158BA4840058BC21 /* main.m */; };
+		347F5D99158BA4840058BC21 /* SKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 347F5D98158BA4840058BC21 /* SKAppDelegate.m */; };
+		347F5D9C158BA4840058BC21 /* SKRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 347F5D9B158BA4840058BC21 /* SKRootViewController.m */; };
+		347F5D9F158BA4840058BC21 /* SKRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 347F5D9D158BA4840058BC21 /* SKRootViewController.xib */; };
+		347F5DA7158BA4840058BC21 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347F5DA6158BA4840058BC21 /* SenTestingKit.framework */; };
+		347F5DA8158BA4840058BC21 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347F5D88158BA4840058BC21 /* UIKit.framework */; };
+		347F5DA9158BA4840058BC21 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347F5D8A158BA4840058BC21 /* Foundation.framework */; };
+		347F5DB1158BA4840058BC21 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 347F5DAF158BA4840058BC21 /* InfoPlist.strings */; };
+		347F5DB4158BA4840058BC21 /* SKBounceAnimationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 347F5DB3158BA4840058BC21 /* SKBounceAnimationTests.m */; };
+		347F5DBF158BA4A80058BC21 /* SKBounceAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 347F5DBE158BA4A80058BC21 /* SKBounceAnimation.m */; };
+		347F5DC5158BACB40058BC21 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347F5DC4158BACB40058BC21 /* QuartzCore.framework */; };
+		34B30E4D15DD3A5F00DA5D73 /* ColorBounceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B30E4C15DD3A5F00DA5D73 /* ColorBounceController.m */; };
+		34B30E4E15DD3A5F00DA5D73 /* ColorBounceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B30E4C15DD3A5F00DA5D73 /* ColorBounceController.m */; };
+		34C2E36B15DC242600310CA1 /* OneAxisBounceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C2E36A15DC242600310CA1 /* OneAxisBounceController.m */; };
+		34C2E36F15DC362700310CA1 /* TwoAxisBounceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C2E36E15DC362700310CA1 /* TwoAxisBounceController.m */; };
+		34C2E37015DC362700310CA1 /* TwoAxisBounceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C2E36E15DC362700310CA1 /* TwoAxisBounceController.m */; };
+		34C2E37715DC396D00310CA1 /* RectBounceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C2E37115DC396C00310CA1 /* RectBounceController.m */; };
+		34C2E37815DC396D00310CA1 /* RectBounceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C2E37115DC396C00310CA1 /* RectBounceController.m */; };
+		34C2E37915DC396D00310CA1 /* ScaleBounceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C2E37215DC396C00310CA1 /* ScaleBounceController.m */; };
+		34C2E37A15DC396D00310CA1 /* ScaleBounceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C2E37215DC396C00310CA1 /* ScaleBounceController.m */; };
+		34C2E37B15DC396D00310CA1 /* SizeBounceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C2E37315DC396C00310CA1 /* SizeBounceController.m */; };
+		34C2E37C15DC396D00310CA1 /* SizeBounceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C2E37315DC396C00310CA1 /* SizeBounceController.m */; };
+		34EBC79315DD487F00170F01 /* ScaleRotateBounceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EBC79215DD487F00170F01 /* ScaleRotateBounceController.m */; };
+		34EBC79415DD487F00170F01 /* ScaleRotateBounceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EBC79215DD487F00170F01 /* ScaleRotateBounceController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		347F5DAA158BA4840058BC21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 347F5D7B158BA4840058BC21 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 347F5D83158BA4840058BC21;
+			remoteInfo = SKBounceAnimation;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		347F5D84158BA4840058BC21 /* SKBounceAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKBounceAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		347F5D88158BA4840058BC21 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		347F5D8A158BA4840058BC21 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		347F5D8C158BA4840058BC21 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		347F5D90158BA4840058BC21 /* SKBounceAnimation-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SKBounceAnimation-Info.plist"; sourceTree = "<group>"; };
+		347F5D92158BA4840058BC21 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		347F5D94158BA4840058BC21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		347F5D96158BA4840058BC21 /* SKBounceAnimation-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SKBounceAnimation-Prefix.pch"; sourceTree = "<group>"; };
+		347F5D97158BA4840058BC21 /* SKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKAppDelegate.h; sourceTree = "<group>"; };
+		347F5D98158BA4840058BC21 /* SKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKAppDelegate.m; sourceTree = "<group>"; };
+		347F5D9A158BA4840058BC21 /* SKRootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKRootViewController.h; sourceTree = "<group>"; };
+		347F5D9B158BA4840058BC21 /* SKRootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKRootViewController.m; sourceTree = "<group>"; };
+		347F5D9E158BA4840058BC21 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SKRootViewController.xib; sourceTree = "<group>"; };
+		347F5DA5158BA4840058BC21 /* SKBounceAnimationTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SKBounceAnimationTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		347F5DA6158BA4840058BC21 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		347F5DAE158BA4840058BC21 /* SKBounceAnimationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SKBounceAnimationTests-Info.plist"; sourceTree = "<group>"; };
+		347F5DB0158BA4840058BC21 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		347F5DB2158BA4840058BC21 /* SKBounceAnimationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKBounceAnimationTests.h; sourceTree = "<group>"; };
+		347F5DB3158BA4840058BC21 /* SKBounceAnimationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKBounceAnimationTests.m; sourceTree = "<group>"; };
+		347F5DBD158BA4A80058BC21 /* SKBounceAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKBounceAnimation.h; sourceTree = "<group>"; };
+		347F5DBE158BA4A80058BC21 /* SKBounceAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKBounceAnimation.m; sourceTree = "<group>"; };
+		347F5DC4158BACB40058BC21 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		34B30E4B15DD3A5F00DA5D73 /* ColorBounceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorBounceController.h; sourceTree = "<group>"; };
+		34B30E4C15DD3A5F00DA5D73 /* ColorBounceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorBounceController.m; sourceTree = "<group>"; };
+		34C2E36915DC242600310CA1 /* OneAxisBounceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneAxisBounceController.h; sourceTree = "<group>"; };
+		34C2E36A15DC242600310CA1 /* OneAxisBounceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneAxisBounceController.m; sourceTree = "<group>"; };
+		34C2E36D15DC362600310CA1 /* TwoAxisBounceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoAxisBounceController.h; sourceTree = "<group>"; };
+		34C2E36E15DC362700310CA1 /* TwoAxisBounceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoAxisBounceController.m; sourceTree = "<group>"; };
+		34C2E37115DC396C00310CA1 /* RectBounceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectBounceController.m; sourceTree = "<group>"; };
+		34C2E37215DC396C00310CA1 /* ScaleBounceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleBounceController.m; sourceTree = "<group>"; };
+		34C2E37315DC396C00310CA1 /* SizeBounceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SizeBounceController.m; sourceTree = "<group>"; };
+		34C2E37415DC396C00310CA1 /* RectBounceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectBounceController.h; sourceTree = "<group>"; };
+		34C2E37515DC396C00310CA1 /* ScaleBounceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleBounceController.h; sourceTree = "<group>"; };
+		34C2E37615DC396D00310CA1 /* SizeBounceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SizeBounceController.h; sourceTree = "<group>"; };
+		34EBC79115DD487F00170F01 /* ScaleRotateBounceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleRotateBounceController.h; sourceTree = "<group>"; };
+		34EBC79215DD487F00170F01 /* ScaleRotateBounceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleRotateBounceController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		347F5D81158BA4840058BC21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				347F5DC5158BACB40058BC21 /* QuartzCore.framework in Frameworks */,
+				347F5D89158BA4840058BC21 /* UIKit.framework in Frameworks */,
+				347F5D8B158BA4840058BC21 /* Foundation.framework in Frameworks */,
+				347F5D8D158BA4840058BC21 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		347F5DA1158BA4840058BC21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				347F5DA7158BA4840058BC21 /* SenTestingKit.framework in Frameworks */,
+				347F5DA8158BA4840058BC21 /* UIKit.framework in Frameworks */,
+				347F5DA9158BA4840058BC21 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		347F5D79158BA4840058BC21 = {
+			isa = PBXGroup;
+			children = (
+				347F5DC4158BACB40058BC21 /* QuartzCore.framework */,
+				347F5D8E158BA4840058BC21 /* SKBounceAnimation */,
+				347F5DAC158BA4840058BC21 /* SKBounceAnimationTests */,
+				347F5D87158BA4840058BC21 /* Frameworks */,
+				347F5D85158BA4840058BC21 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		347F5D85158BA4840058BC21 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				347F5D84158BA4840058BC21 /* SKBounceAnimation.app */,
+				347F5DA5158BA4840058BC21 /* SKBounceAnimationTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		347F5D87158BA4840058BC21 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				347F5D88158BA4840058BC21 /* UIKit.framework */,
+				347F5D8A158BA4840058BC21 /* Foundation.framework */,
+				347F5D8C158BA4840058BC21 /* CoreGraphics.framework */,
+				347F5DA6158BA4840058BC21 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		347F5D8E158BA4840058BC21 /* SKBounceAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				347F5D97158BA4840058BC21 /* SKAppDelegate.h */,
+				347F5D98158BA4840058BC21 /* SKAppDelegate.m */,
+				347F5D9A158BA4840058BC21 /* SKRootViewController.h */,
+				347F5D9B158BA4840058BC21 /* SKRootViewController.m */,
+				347F5D9D158BA4840058BC21 /* SKRootViewController.xib */,
+				34C2E36915DC242600310CA1 /* OneAxisBounceController.h */,
+				34C2E36A15DC242600310CA1 /* OneAxisBounceController.m */,
+				34C2E36D15DC362600310CA1 /* TwoAxisBounceController.h */,
+				34C2E36E15DC362700310CA1 /* TwoAxisBounceController.m */,
+				34C2E37415DC396C00310CA1 /* RectBounceController.h */,
+				34C2E37115DC396C00310CA1 /* RectBounceController.m */,
+				34B30E4B15DD3A5F00DA5D73 /* ColorBounceController.h */,
+				34B30E4C15DD3A5F00DA5D73 /* ColorBounceController.m */,
+				34C2E37515DC396C00310CA1 /* ScaleBounceController.h */,
+				34C2E37215DC396C00310CA1 /* ScaleBounceController.m */,
+				34EBC79115DD487F00170F01 /* ScaleRotateBounceController.h */,
+				34EBC79215DD487F00170F01 /* ScaleRotateBounceController.m */,
+				34C2E37615DC396D00310CA1 /* SizeBounceController.h */,
+				34C2E37315DC396C00310CA1 /* SizeBounceController.m */,
+				347F5DBD158BA4A80058BC21 /* SKBounceAnimation.h */,
+				347F5DBE158BA4A80058BC21 /* SKBounceAnimation.m */,
+				347F5D8F158BA4840058BC21 /* Supporting Files */,
+			);
+			path = SKBounceAnimation;
+			sourceTree = "<group>";
+		};
+		347F5D8F158BA4840058BC21 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				347F5D90158BA4840058BC21 /* SKBounceAnimation-Info.plist */,
+				347F5D91158BA4840058BC21 /* InfoPlist.strings */,
+				347F5D94158BA4840058BC21 /* main.m */,
+				347F5D96158BA4840058BC21 /* SKBounceAnimation-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		347F5DAC158BA4840058BC21 /* SKBounceAnimationTests */ = {
+			isa = PBXGroup;
+			children = (
+				347F5DB2158BA4840058BC21 /* SKBounceAnimationTests.h */,
+				347F5DB3158BA4840058BC21 /* SKBounceAnimationTests.m */,
+				347F5DAD158BA4840058BC21 /* Supporting Files */,
+			);
+			path = SKBounceAnimationTests;
+			sourceTree = "<group>";
+		};
+		347F5DAD158BA4840058BC21 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				347F5DAE158BA4840058BC21 /* SKBounceAnimationTests-Info.plist */,
+				347F5DAF158BA4840058BC21 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		347F5D83158BA4840058BC21 /* SKBounceAnimation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 347F5DB7158BA4840058BC21 /* Build configuration list for PBXNativeTarget "SKBounceAnimation" */;
+			buildPhases = (
+				347F5D80158BA4840058BC21 /* Sources */,
+				347F5D81158BA4840058BC21 /* Frameworks */,
+				347F5D82158BA4840058BC21 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SKBounceAnimation;
+			productName = SKBounceAnimation;
+			productReference = 347F5D84158BA4840058BC21 /* SKBounceAnimation.app */;
+			productType = "com.apple.product-type.application";
+		};
+		347F5DA4158BA4840058BC21 /* SKBounceAnimationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 347F5DBA158BA4840058BC21 /* Build configuration list for PBXNativeTarget "SKBounceAnimationTests" */;
+			buildPhases = (
+				347F5DA0158BA4840058BC21 /* Sources */,
+				347F5DA1158BA4840058BC21 /* Frameworks */,
+				347F5DA2158BA4840058BC21 /* Resources */,
+				347F5DA3158BA4840058BC21 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				347F5DAB158BA4840058BC21 /* PBXTargetDependency */,
+			);
+			name = SKBounceAnimationTests;
+			productName = SKBounceAnimationTests;
+			productReference = 347F5DA5158BA4840058BC21 /* SKBounceAnimationTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		347F5D7B158BA4840058BC21 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SK;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 347F5D7E158BA4840058BC21 /* Build configuration list for PBXProject "SKBounceAnimation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 347F5D79158BA4840058BC21;
+			productRefGroup = 347F5D85158BA4840058BC21 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				347F5D83158BA4840058BC21 /* SKBounceAnimation */,
+				347F5DA4158BA4840058BC21 /* SKBounceAnimationTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		347F5D82158BA4840058BC21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				347F5D93158BA4840058BC21 /* InfoPlist.strings in Resources */,
+				347F5D9F158BA4840058BC21 /* SKRootViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		347F5DA2158BA4840058BC21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				347F5DB1158BA4840058BC21 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		347F5DA3158BA4840058BC21 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		347F5D80158BA4840058BC21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				347F5D95158BA4840058BC21 /* main.m in Sources */,
+				347F5D99158BA4840058BC21 /* SKAppDelegate.m in Sources */,
+				347F5D9C158BA4840058BC21 /* SKRootViewController.m in Sources */,
+				347F5DBF158BA4A80058BC21 /* SKBounceAnimation.m in Sources */,
+				34C2E36B15DC242600310CA1 /* OneAxisBounceController.m in Sources */,
+				34C2E36F15DC362700310CA1 /* TwoAxisBounceController.m in Sources */,
+				34C2E37715DC396D00310CA1 /* RectBounceController.m in Sources */,
+				34C2E37915DC396D00310CA1 /* ScaleBounceController.m in Sources */,
+				34C2E37B15DC396D00310CA1 /* SizeBounceController.m in Sources */,
+				34B30E4D15DD3A5F00DA5D73 /* ColorBounceController.m in Sources */,
+				34EBC79315DD487F00170F01 /* ScaleRotateBounceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		347F5DA0158BA4840058BC21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				347F5DB4158BA4840058BC21 /* SKBounceAnimationTests.m in Sources */,
+				34C2E37015DC362700310CA1 /* TwoAxisBounceController.m in Sources */,
+				34C2E37815DC396D00310CA1 /* RectBounceController.m in Sources */,
+				34C2E37A15DC396D00310CA1 /* ScaleBounceController.m in Sources */,
+				34C2E37C15DC396D00310CA1 /* SizeBounceController.m in Sources */,
+				34B30E4E15DD3A5F00DA5D73 /* ColorBounceController.m in Sources */,
+				34EBC79415DD487F00170F01 /* ScaleRotateBounceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		347F5DAB158BA4840058BC21 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 347F5D83158BA4840058BC21 /* SKBounceAnimation */;
+			targetProxy = 347F5DAA158BA4840058BC21 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		347F5D91158BA4840058BC21 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				347F5D92158BA4840058BC21 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		347F5D9D158BA4840058BC21 /* SKRootViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				347F5D9E158BA4840058BC21 /* en */,
+			);
+			name = SKRootViewController.xib;
+			sourceTree = "<group>";
+		};
+		347F5DAF158BA4840058BC21 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				347F5DB0158BA4840058BC21 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		347F5DB5158BA4840058BC21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		347F5DB6158BA4840058BC21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		347F5DB8158BA4840058BC21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SKBounceAnimation/SKBounceAnimation-Prefix.pch";
+				INFOPLIST_FILE = "SKBounceAnimation/SKBounceAnimation-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		347F5DB9158BA4840058BC21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SKBounceAnimation/SKBounceAnimation-Prefix.pch";
+				INFOPLIST_FILE = "SKBounceAnimation/SKBounceAnimation-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		347F5DBB158BA4840058BC21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SKBounceAnimation.app/SKBounceAnimation";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SKBounceAnimation/SKBounceAnimation-Prefix.pch";
+				INFOPLIST_FILE = "SKBounceAnimationTests/SKBounceAnimationTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		347F5DBC158BA4840058BC21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SKBounceAnimation.app/SKBounceAnimation";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SKBounceAnimation/SKBounceAnimation-Prefix.pch";
+				INFOPLIST_FILE = "SKBounceAnimationTests/SKBounceAnimationTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		347F5D7E158BA4840058BC21 /* Build configuration list for PBXProject "SKBounceAnimation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				347F5DB5158BA4840058BC21 /* Debug */,
+				347F5DB6158BA4840058BC21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		347F5DB7158BA4840058BC21 /* Build configuration list for PBXNativeTarget "SKBounceAnimation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				347F5DB8158BA4840058BC21 /* Debug */,
+				347F5DB9158BA4840058BC21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		347F5DBA158BA4840058BC21 /* Build configuration list for PBXNativeTarget "SKBounceAnimationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				347F5DBB158BA4840058BC21 /* Debug */,
+				347F5DBC158BA4840058BC21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 347F5D7B158BA4840058BC21 /* Project object */;
+}
