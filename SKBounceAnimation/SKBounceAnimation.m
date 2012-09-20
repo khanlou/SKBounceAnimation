@@ -9,9 +9,9 @@
 #import "SKBounceAnimation.h"
 
 /*
-Keypaths:
+ Keypaths:
  
-Float animations:
+ Float animations:
  anchorPoint
  cornerRadius
  borderWidth
@@ -20,25 +20,25 @@ Float animations:
  shadowOpacity
  zPosition
  
-Point/size animations:
+ Point/size animations:
  position
  shadowOffset
  
-Rect animations:
+ Rect animations:
  bounds
  frame - not strictly animatable, use bounds
  contentsRect
  
-Colors:
+ Colors:
  backgroundColor
  borderColor
  shadowColor
  
-CATransform3D:
+ CATransform3D:
  transform
-
  
-Meaningless:
+ 
+ Meaningless:
  backgroundFilters
  compositingFilter
  contents
@@ -124,6 +124,15 @@ Meaningless:
 	return [[super valueForKey:@"shouldOvershootKey"] boolValue];
 }
 
+- (void) setShake:(BOOL)newShake {
+	[super setValue:[NSNumber numberWithBool:newShake] forKey:@"shakeKey"];
+	[self createValueArray];
+}
+
+- (BOOL) shake {
+	return [[super valueForKey:@"shakeKey"] boolValue];
+}
+
 - (id) fromValue {
 	return [super valueForKey:@"fromValueKey"];
 }
@@ -143,9 +152,9 @@ Meaningless:
 		} else if ([self.fromValue isKindOfClass:[UIColor class]] && [self.toValue isKindOfClass:[UIColor class]]) {
 			const CGFloat *fromComponents = CGColorGetComponents(((UIColor*)self.fromValue).CGColor);
 			const CGFloat *toComponents = CGColorGetComponents(((UIColor*)self.toValue).CGColor);
-//			NSLog(@"thing");
-//			NSLog(@"from %0.2f %0.2f %0.2f %0.2f", fromComponents[0], fromComponents[1], fromComponents[2], fromComponents[3]);
-//			NSLog(@"to %0.2f %0.2f %0.2f %0.2f", toComponents[0], toComponents[1], toComponents[2], toComponents[3]);
+			//			NSLog(@"thing");
+			//			NSLog(@"from %0.2f %0.2f %0.2f %0.2f", fromComponents[0], fromComponents[1], fromComponents[2], fromComponents[3]);
+			//			NSLog(@"to %0.2f %0.2f %0.2f %0.2f", toComponents[0], toComponents[1], toComponents[2], toComponents[3]);
 			self.values = [self createColorArrayFromRed:
 						[self valueArrayForStartValue:fromComponents[0] endValue:toComponents[0]]
 										   green:
@@ -178,43 +187,43 @@ Meaningless:
 				CATransform3D fromTransform = [self.fromValue CATransform3DValue];
 				CATransform3D toTransform = [self.toValue CATransform3DValue];
 				
-//				NSLog(@"from [%0.2f %0.2f %0.2f %0.2f; %0.2f %0.2f %0.2f %0.2f; %0.2f %0.2f %0.2f %0.2f; %0.2f %0.2f %0.2f %0.2f]", fromTransform.m11, fromTransform.m12, fromTransform.m13, fromTransform.m14, fromTransform.m21, fromTransform.m22, fromTransform.m23, fromTransform.m24, fromTransform.m31, fromTransform.m32, fromTransform.m33, fromTransform.m34, fromTransform.m41, fromTransform.m42, fromTransform.m43, fromTransform.m44);
-//
-//				NSLog(@"to [%0.2f %0.2f %0.2f %0.2f; %0.2f %0.2f %0.2f %0.2f; %0.2f %0.2f %0.2f %0.2f; %0.2f %0.2f %0.2f %0.2f]", toTransform.m11, toTransform.m12, toTransform.m13, toTransform.m14, toTransform.m21, toTransform.m22, toTransform.m23, toTransform.m24, toTransform.m31, toTransform.m32, toTransform.m33, toTransform.m34, toTransform.m41, toTransform.m42, toTransform.m43, toTransform.m44);
-
+				//				NSLog(@"from [%0.2f %0.2f %0.2f %0.2f; %0.2f %0.2f %0.2f %0.2f; %0.2f %0.2f %0.2f %0.2f; %0.2f %0.2f %0.2f %0.2f]", fromTransform.m11, fromTransform.m12, fromTransform.m13, fromTransform.m14, fromTransform.m21, fromTransform.m22, fromTransform.m23, fromTransform.m24, fromTransform.m31, fromTransform.m32, fromTransform.m33, fromTransform.m34, fromTransform.m41, fromTransform.m42, fromTransform.m43, fromTransform.m44);
+				//
+				//				NSLog(@"to [%0.2f %0.2f %0.2f %0.2f; %0.2f %0.2f %0.2f %0.2f; %0.2f %0.2f %0.2f %0.2f; %0.2f %0.2f %0.2f %0.2f]", toTransform.m11, toTransform.m12, toTransform.m13, toTransform.m14, toTransform.m21, toTransform.m22, toTransform.m23, toTransform.m24, toTransform.m31, toTransform.m32, toTransform.m33, toTransform.m34, toTransform.m41, toTransform.m42, toTransform.m43, toTransform.m44);
+				
 				self.values = [self createTransformArrayFromM11:
-						   [self valueArrayForStartValue:fromTransform.m11 endValue:toTransform.m11]
-												  M12:
-						   [self valueArrayForStartValue:fromTransform.m12 endValue:toTransform.m12]
-												  M13:
-						   [self valueArrayForStartValue:fromTransform.m13 endValue:toTransform.m13]
-												  M14:
-						   [self valueArrayForStartValue:fromTransform.m14 endValue:toTransform.m14]
-												  M21:
-						   [self valueArrayForStartValue:fromTransform.m21 endValue:toTransform.m21]
-												  M22:
-						   [self valueArrayForStartValue:fromTransform.m22 endValue:toTransform.m22]
-												  M23:
-						   [self valueArrayForStartValue:fromTransform.m23 endValue:toTransform.m23]
-												  M24:
-						   [self valueArrayForStartValue:fromTransform.m24 endValue:toTransform.m24]
-												  M31:
-						   [self valueArrayForStartValue:fromTransform.m31 endValue:toTransform.m31]
-												  M32:
-						   [self valueArrayForStartValue:fromTransform.m32 endValue:toTransform.m32]
-												  M33:
-						   [self valueArrayForStartValue:fromTransform.m33 endValue:toTransform.m33]
-												  M34:
-						   [self valueArrayForStartValue:fromTransform.m34 endValue:toTransform.m34]
-												  M41:
-						   [self valueArrayForStartValue:fromTransform.m41 endValue:toTransform.m41]
-												  M42:
-						   [self valueArrayForStartValue:fromTransform.m42 endValue:toTransform.m42]
-												  M43:
-						   [self valueArrayForStartValue:fromTransform.m43 endValue:toTransform.m43]
-												  M44:
-						   [self valueArrayForStartValue:fromTransform.m44 endValue:toTransform.m44]
-						   ];
+							[self valueArrayForStartValue:fromTransform.m11 endValue:toTransform.m11]
+												    M12:
+							[self valueArrayForStartValue:fromTransform.m12 endValue:toTransform.m12]
+												    M13:
+							[self valueArrayForStartValue:fromTransform.m13 endValue:toTransform.m13]
+												    M14:
+							[self valueArrayForStartValue:fromTransform.m14 endValue:toTransform.m14]
+												    M21:
+							[self valueArrayForStartValue:fromTransform.m21 endValue:toTransform.m21]
+												    M22:
+							[self valueArrayForStartValue:fromTransform.m22 endValue:toTransform.m22]
+												    M23:
+							[self valueArrayForStartValue:fromTransform.m23 endValue:toTransform.m23]
+												    M24:
+							[self valueArrayForStartValue:fromTransform.m24 endValue:toTransform.m24]
+												    M31:
+							[self valueArrayForStartValue:fromTransform.m31 endValue:toTransform.m31]
+												    M32:
+							[self valueArrayForStartValue:fromTransform.m32 endValue:toTransform.m32]
+												    M33:
+							[self valueArrayForStartValue:fromTransform.m33 endValue:toTransform.m33]
+												    M34:
+							[self valueArrayForStartValue:fromTransform.m34 endValue:toTransform.m34]
+												    M41:
+							[self valueArrayForStartValue:fromTransform.m41 endValue:toTransform.m41]
+												    M42:
+							[self valueArrayForStartValue:fromTransform.m42 endValue:toTransform.m42]
+												    M43:
+							[self valueArrayForStartValue:fromTransform.m43 endValue:toTransform.m43]
+												    M44:
+							[self valueArrayForStartValue:fromTransform.m44 endValue:toTransform.m44]
+							];
 			} else if ([valueType rangeOfString:@"CGSize"].location == 1) {
 				CGSize fromSize = [self.fromValue CGSizeValue];
 				CGSize toSize = [self.toValue CGSizeValue];
@@ -303,13 +312,13 @@ Meaningless:
 	NSUInteger numberOfColors = redValues.count;
 	NSMutableArray *values = [NSMutableArray arrayWithCapacity:numberOfColors];
 	UIColor *value;
-
+	
 	for (int i = 1; i < numberOfColors; i++) {
 		value = [UIColor colorWithRed:[[redValues objectAtIndex:i] floatValue]
 						    green:[[greenValues objectAtIndex:i] floatValue]
 							blue:[[blueValues objectAtIndex:i] floatValue]
 						    alpha:[[alphaValues objectAtIndex:i] floatValue]];
-//		NSLog(@"a color %@", value);
+		//		NSLog(@"a color %@", value);
 		[values addObject:(id)value.CGColor];
 	}
 	return values;
@@ -331,22 +340,35 @@ Meaningless:
 	CGFloat omega = numberOfPeriods * 2*M_PI/steps;
 	
 	//uncomment this to get the equation of motion
-//	NSLog(@"y = %0.2f * e^(%0.5f*x)*cos(%0.10f*x) + %0.0f over %d frames", startValue - endValue, alpha, omega, endValue, steps);
+	//	NSLog(@"y = %0.2f * e^(%0.5f*x)*cos(%0.10f*x) + %0.0f over %d frames", startValue - endValue, alpha, omega, endValue, steps);
 	
 	NSMutableArray *values = [NSMutableArray arrayWithCapacity:steps];
 	CGFloat value = 0;
 	
 	CGFloat sign = (endValue-startValue)/fabsf(endValue-startValue);
 	
+	CGFloat oscillationComponent;
+	CGFloat coefficient;
+	
 	// conforms to y = A * e^(-alpha*t)*cos(omega*t)
 	for (int t = 0; t < steps; t++) {
 		//decaying mass-spring-damper solution with initial displacement
 		
-		if (self.shouldOvershoot) {
-			value = (startValue - endValue) * pow(2.71, alpha*t) * cos(omega*t) + endValue;
+		if (self.shake) {
+			oscillationComponent =  sin(omega*t);
 		} else {
-			value = -1*sign*fabsf((startValue - endValue) * pow(2.71, alpha*t) * cos(omega*t)) + endValue;
+			oscillationComponent =  cos(omega*t);
 		}
+		
+		if (self.shouldOvershoot) {
+			coefficient =  (startValue - endValue);
+		} else {
+			coefficient = -1*sign*fabsf((startValue - endValue));
+		}
+		
+		value = coefficient * pow(2.71, alpha*t) * oscillationComponent + endValue;
+		
+		
 		
 		[values addObject:[NSNumber numberWithFloat:value]];
 	}

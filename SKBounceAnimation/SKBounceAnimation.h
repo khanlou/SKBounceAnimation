@@ -17,7 +17,7 @@
 @property (nonatomic, retain) id toValue;
 @property (nonatomic, assign) NSUInteger numberOfBounces;
 @property (nonatomic, assign) BOOL shouldOvershoot; //default YES
-//BOOL shouldStretchBeforeBouncing @TODO
+@property (nonatomic, assign) BOOL shake; //if shaking, set fromValue to the furthest value, and toValue to the current value
 
 
 + (SKBounceAnimation*) animationWithKeyPath:(NSString*)keyPath;
