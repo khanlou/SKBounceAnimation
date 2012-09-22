@@ -33,9 +33,9 @@ A is the difference between start and end values, B is the end value, α is dete
 
 ## Extras
 
-`shouldOvershoot` is a property that you can change. It defaults to YES; if you set it to NO, the animation will bounce as if it were hitting a wall, instead of overshooting the target value and bouncing back. It looks a lot like the Anvil effect in Keynote.
+`shouldOvershoot` is a property that you can change. It defaults to `YES`; if you set it to `NO`, the animation will bounce as if it were hitting a wall, instead of overshooting the target value and bouncing back. It looks a lot like the Anvil effect in Keynote.
 
-I’d like to add another property that would make the object stretch away from its original location and then bounce back, the way the photo button in iOS 5.1+ works, but I haven’t had a chance to implement yet.
+`shake` is a property that controls the oscilliation function. Setting it to `YES` lets you shake the element instead of moving it. To use it, set the `fromValue` to the maximum amount you want it to go to and `toValue` to its current location. It uses a sine wave for the oscillation intead of cosine, since it starts at 0 (i.e., the current location.)
 
 ## Demo app
 
@@ -45,10 +45,10 @@ The demo app contains demos for several different animations that are supported 
 * Two-axis animation: Using a keypath like `position`, `SKBounceAnimation` will generate a path, and your layer will follow it.
 * Size: Using the `bounds` keypath, we can make the size increase. The center of the size increase is determined by `anchorPoint`, which can be moved. It defaults to the center of the layer
 * Color: I have no idea why anyone would want to bounce a color animation, but I was feeling whimsical, so I added support for this as well.
-* Scale: Using a `CATransform3D` struct and the `transform` keypath, we can scale objects. This is very useful to create an effect like UIAlerts bouncing in.
+* Scale: Using a `CATransform3D` struct and the `transform` keypath, we can scale objects. This is very useful to create an effect like UIAlerts bouncing in. The `anchorPoint` also judges how this effect happens.
 * Scale & Rotate: Using multiple CATransform3Ds on top of each other, we can do super weird effects like scale and rotating. They look really cool.
 * Rect: The last demo creates two `SKBounceAnimations` with two different `keyPath`s (`position` and `bounds`) but attaches them to the same layer. The effect looks like a `frame` animation.
 
 ## Future work
 
-`SKBounceAnimation` doesn’t support the `byValue` property yet. I also would like to add a property like `stretchAndBounceBack`. 
+`SKBounceAnimation` doesn’t support the `byValue` property yet. 
