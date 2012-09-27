@@ -247,8 +247,8 @@
 		value = CGRectMake(
 					    [[xValues objectAtIndex:i] floatValue],
 					    [[yValues objectAtIndex:i] floatValue],
-					    [[heights objectAtIndex:i] floatValue],
-					    [[widths objectAtIndex:i] floatValue]
+					    [[widths objectAtIndex:i] floatValue],
+					    [[heights objectAtIndex:i] floatValue]
 					    );
 		[values addObject:[NSValue valueWithCGRect:value]];
 	}
