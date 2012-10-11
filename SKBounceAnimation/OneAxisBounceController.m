@@ -47,22 +47,21 @@
 		bouncingView.center = CGPointMake(160, 60);
 		return;
 	}
-	SKBounceAnimation *bounceAnimation = [SKBounceAnimation animationWithKeyPath:@"position.y"];
+	
+	NSString *keyPath = @"position.y";
+	id finalValue = [NSNumber numberWithFloat:300];
+
+	
+	SKBounceAnimation *bounceAnimation = [SKBounceAnimation animationWithKeyPath:keyPath];
 	bounceAnimation.fromValue = [NSNumber numberWithFloat:bouncingView.center.x];
-	bounceAnimation.toValue = [NSNumber numberWithFloat:300];
+	bounceAnimation.toValue = finalValue;
 	bounceAnimation.duration = 0.5f;
-	bounceAnimation.delegate = self;
 	bounceAnimation.numberOfBounces = 4;
 	bounceAnimation.shouldOvershoot = YES;
 
-	bounceAnimation.removedOnCompletion = NO;
-	bounceAnimation.fillMode = kCAFillModeForwards;
-
 	[bouncingView.layer addAnimation:bounceAnimation forKey:@"someKey"];
+
+	[bouncingView.layer setValue:finalValue forKeyPath:keyPath];
 }
 
-- (void) animationDidStop:(SKBounceAnimation *)animation finished:(BOOL)flag {
-	[bouncingView.layer setValue:animation.toValue forKeyPath:animation.keyPath];
-	[bouncingView.layer removeAnimationForKey:@"someKey"];
-}
 @end

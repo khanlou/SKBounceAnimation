@@ -47,21 +47,22 @@
 		bouncingView.center = CGPointMake(160, 200);
 		return;
 	}
-	SKBounceAnimation *bounceAnimation = [SKBounceAnimation animationWithKeyPath:@"bounds"];
-	bounceAnimation.fromValue = [NSValue valueWithCGRect:bouncingView.frame];
-	bounceAnimation.toValue = [NSValue valueWithCGRect:CGRectMake(0, 0, 100, 100)];
-	bounceAnimation.duration = 0.5f;
-	bounceAnimation.numberOfBounces = 4;
-	bounceAnimation.delegate = self;
+	
+	
+	NSString *sizeKeyPath = @"bounds";
+	id finalSize = [NSValue valueWithCGRect:CGRectMake(0, 0, 100, 100)];
+	
+	SKBounceAnimation *sizeAnimation = [SKBounceAnimation animationWithKeyPath:sizeKeyPath];
+	sizeAnimation.fromValue = [NSValue valueWithCGRect:bouncingView.frame];
+	sizeAnimation.toValue = finalSize;
+	sizeAnimation.duration = 0.5f;
+	sizeAnimation.numberOfBounces = 4;
+	sizeAnimation.shouldOvershoot = YES;
+	
+	[bouncingView.layer addAnimation:sizeAnimation forKey:@"sizeKey"];
+	
+	[bouncingView.layer setValue:finalSize forKeyPath:sizeKeyPath];
 
-	bounceAnimation.removedOnCompletion = NO;
-	bounceAnimation.fillMode = kCAFillModeForwards;
-
-	[bouncingView.layer addAnimation:bounceAnimation forKey:@"someKey"];
 }
 
-- (void) animationDidStop:(SKBounceAnimation *)animation finished:(BOOL)flag {
-	[bouncingView.layer setValue:animation.toValue forKeyPath:animation.keyPath];
-	[bouncingView.layer removeAnimationForKey:@"someKey"];
-}
 @end

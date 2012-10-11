@@ -55,24 +55,25 @@
 		bouncingView.center = CGPointMake(160, 200);
 		return;
 	}
-	SKBounceAnimation *bounceAnimation = [SKBounceAnimation animationWithKeyPath:@"transform"];
+	
+	
+	NSString *keyPath = @"transform";
 	CATransform3D transform = bouncingView.layer.transform;
+	id finalValue = [NSValue valueWithCATransform3D:
+										  CATransform3DScale(CATransform3DRotate(transform, M_PI/4, 0, 0, 1), 1.5, 1.5, 1.5)
+										  ];
+
+	SKBounceAnimation *bounceAnimation = [SKBounceAnimation animationWithKeyPath:keyPath];
 	bounceAnimation.fromValue = [NSValue valueWithCATransform3D:transform];
-	bounceAnimation.toValue = [NSValue valueWithCATransform3D:
-						  CATransform3DScale(CATransform3DRotate(transform, M_PI/4, 0, 0, 1), 1.5, 1.5, 1.5)
-						  ];
+	bounceAnimation.toValue = finalValue;
 	bounceAnimation.duration = 0.5f;
-	bounceAnimation.numberOfBounces = 2;
-	bounceAnimation.delegate = self;
-
-	bounceAnimation.removedOnCompletion = NO;
-	bounceAnimation.fillMode = kCAFillModeForwards;
-
+	bounceAnimation.numberOfBounces = 4;
+	bounceAnimation.shouldOvershoot = YES;
+	
 	[bouncingView.layer addAnimation:bounceAnimation forKey:@"someKey"];
+	
+	[bouncingView.layer setValue:finalValue forKeyPath:keyPath];
+
 }
 
-- (void) animationDidStop:(SKBounceAnimation *)animation finished:(BOOL)flag {
-	[bouncingView.layer setValue:animation.toValue forKeyPath:animation.keyPath];
-	[bouncingView.layer removeAnimationForKey:@"someKey"];
-}
 @end

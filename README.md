@@ -6,24 +6,21 @@
 
 Basic code is simple:
 
-	SKBounceAnimation *bounceAnimation = [SKBounceAnimation animationWithKeyPath:@"position.y"];
-	bounceAnimation.fromValue = [NSNumber numberWithFloat:view.center.x];
-	bounceAnimation.toValue = [NSNumber numberWithFloat:300];
-	bounceAnimation.duration = 0.5f;
-	bounceAnimation.delegate = self;
-	bounceAnimation.numberOfBounces = 2;
+	
+	
+	NSString *keyPath = @"position.y";
+	id finalValue = [NSNumber numberWithFloat:300];
+	[view.layer setValue:finalValue forKeyPath:keyPath];
 
-	bounceAnimation.removedOnCompletion = NO;
-	bounceAnimation.fillMode = kCAFillModeForwards;
+	SKBounceAnimation *bounceAnimation = [SKBounceAnimation animationWithKeyPath:keyPath];
+	bounceAnimation.fromValue = [NSNumber numberWithFloat:view.center.x];
+	bounceAnimation.toValue = finalValue;
+	bounceAnimation.duration = 0.5f;
+	bounceAnimation.numberOfBounces = 2;
 
 	[view.layer addAnimation:bounceAnimation forKey:@"someKey"];
 
-`SKBounceAnimation` is an **explicit** animation, so you have to tell it not to remove upon completion and set the `fillMode` to `kCAFillModeForwards`. Then, in the completion delegate callback, you can set the value of the property to the final value and remove the animation.
-
-	- (void) animationDidStop:(SKBounceAnimation *)animation finished:(BOOL)flag {
-		[bouncingView.layer setValue:animation.toValue forKeyPath:animation.keyPath];
-		[bouncingView.layer removeAnimationForKey:@"someKey"];
-	}
+We set the value of our keypath to the final value, and then perform the animation. When the animation finishes, it is automatically removed from the layer, and the `finalValue` takes over. If you do not use `-(void)setValue:forKeyPath:`, the original value for the keyPath will take over and the animation will snap back to original location after the animation is over.
 
 ## Math
 
