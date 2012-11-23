@@ -180,11 +180,10 @@
 			} else if ([valueType rangeOfString:@"CGPoint"].location == 1) {
 				CGPoint fromPoint = [self.fromValue CGPointValue];
 				CGPoint toPoint = [self.toValue CGPointValue];
-                CGPathRef path = self.path =
-                createPathFromXYValues([self valueArrayForStartValue:fromPoint.x endValue:toPoint.x],
-                                       [self valueArrayForStartValue:fromPoint.y endValue:toPoint.y]);
-                CGPathRelease(path);
-
+				CGPathRef path = createPathFromXYValues([self valueArrayForStartValue:fromPoint.x endValue:toPoint.x], [self valueArrayForStartValue:fromPoint.y endValue:toPoint.y]);
+				self.path = path;
+				CGPathRelease(path);
+				
 			} else if ([valueType rangeOfString:@"CATransform3D"].location == 1) {
 				CATransform3D fromTransform = [self.fromValue CATransform3DValue];
 				CATransform3D toTransform = [self.toValue CATransform3DValue];
@@ -229,10 +228,10 @@
 			} else if ([valueType rangeOfString:@"CGSize"].location == 1) {
 				CGSize fromSize = [self.fromValue CGSizeValue];
 				CGSize toSize = [self.toValue CGSizeValue];
-                CGPathRef path = self.path =
-                createPathFromXYValues([self valueArrayForStartValue:fromSize.width endValue:toSize.width],
-                                       [self valueArrayForStartValue:fromSize.height endValue:toSize.height]);
-                CGPathRelease(path);
+				CGPathRef path = self.path =
+				createPathFromXYValues([self valueArrayForStartValue:fromSize.width endValue:toSize.width],
+								   [self valueArrayForStartValue:fromSize.height endValue:toSize.height]);
+				CGPathRelease(path);
 			}
 			
 		}
@@ -259,9 +258,7 @@
 	return values;
 }
 
-static CGPathRef createPathFromXYValues(NSArray*xValues, NSArray*yValues) {
-//	NSAssert(xValues.count == yValues.count, @"point array must have arrays of equal size");
-
+static CGPathRef createPathFromXYValues(NSArray *xValues, NSArray *yValues) {
 	NSUInteger numberOfPoints = xValues.count;
 	CGMutablePathRef path = CGPathCreateMutable();
 	CGPoint value;
