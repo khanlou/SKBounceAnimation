@@ -228,9 +228,11 @@
 			} else if ([valueType rangeOfString:@"CGSize"].location == 1) {
 				CGSize fromSize = [self.fromValue CGSizeValue];
 				CGSize toSize = [self.toValue CGSizeValue];
-				CGPathRef path = self.path =
-				createPathFromXYValues([self valueArrayForStartValue:fromSize.width endValue:toSize.width],
-								   [self valueArrayForStartValue:fromSize.height endValue:toSize.height]);
+				CGPathRef path = createPathFromXYValues(
+												[self valueArrayForStartValue:fromSize.width endValue:toSize.width],
+												[self valueArrayForStartValue:fromSize.height endValue:toSize.height]
+												);
+				self.path = path;
 				CGPathRelease(path);
 			}
 			
@@ -246,7 +248,7 @@
 	NSMutableArray *values = [NSMutableArray arrayWithCapacity:numberOfRects];
 	CGRect value;
 	
-	for (int i = 1; i < numberOfRects; i++) {
+	for (NSInteger i = 1; i < numberOfRects; i++) {
 		value = CGRectMake(
 					    [[xValues objectAtIndex:i] floatValue],
 					    [[yValues objectAtIndex:i] floatValue],
@@ -265,7 +267,7 @@ static CGPathRef createPathFromXYValues(NSArray *xValues, NSArray *yValues) {
 	value = CGPointMake([[xValues objectAtIndex:0] floatValue], [[yValues objectAtIndex:0] floatValue]);
 	CGPathMoveToPoint(path, NULL, value.x, value.y);
 	
-	for (int i = 1; i < numberOfPoints; i++) {
+	for (NSInteger i = 1; i < numberOfPoints; i++) {
 		value = CGPointMake([[xValues objectAtIndex:i] floatValue], [[yValues objectAtIndex:i] floatValue]);
 		CGPathAddLineToPoint(path, NULL, value.x, value.y);
 	}
@@ -280,7 +282,7 @@ static CGPathRef createPathFromXYValues(NSArray *xValues, NSArray *yValues) {
 	NSMutableArray *values = [NSMutableArray arrayWithCapacity:numberOfTransforms];
 	CATransform3D value;
 	
-	for (int i = 1; i < numberOfTransforms; i++) {
+	for (NSInteger i = 1; i < numberOfTransforms; i++) {
 		value = CATransform3DIdentity;
 		value.m11 = [[m11 objectAtIndex:i] floatValue];
 		value.m12 = [[m12 objectAtIndex:i] floatValue];
@@ -314,7 +316,7 @@ static CGPathRef createPathFromXYValues(NSArray *xValues, NSArray *yValues) {
 	NSMutableArray *values = [NSMutableArray arrayWithCapacity:numberOfColors];
 	UIColor *value;
 	
-	for (int i = 1; i < numberOfColors; i++) {
+	for (NSInteger i = 1; i < numberOfColors; i++) {
 		value = [UIColor colorWithRed:[[redValues objectAtIndex:i] floatValue]
 						    green:[[greenValues objectAtIndex:i] floatValue]
 							blue:[[blueValues objectAtIndex:i] floatValue]
@@ -326,7 +328,7 @@ static CGPathRef createPathFromXYValues(NSArray *xValues, NSArray *yValues) {
 }
 
 - (NSArray*) valueArrayForStartValue:(CGFloat)startValue endValue:(CGFloat)endValue {
-	int steps = 60*self.duration; //60 fps desired
+	NSInteger steps = 60*self.duration; //60 fps desired
 	
 	CGFloat alpha = 0;
 	if (startValue == endValue) {
@@ -346,13 +348,11 @@ static CGPathRef createPathFromXYValues(NSArray *xValues, NSArray *yValues) {
 	NSMutableArray *values = [NSMutableArray arrayWithCapacity:steps];
 	CGFloat value = 0;
 	
-	CGFloat sign = (endValue-startValue)/fabsf(endValue-startValue);
-	
 	CGFloat oscillationComponent;
 	CGFloat coefficient;
 	
 	// conforms to y = A * e^(-alpha*t)*cos(omega*t)
-	for (int t = 0; t < steps; t++) {
+	for (NSInteger t = 0; t < steps; t++) {
 		//decaying mass-spring-damper solution with initial displacement
 		
 		if (self.shake) {
@@ -361,10 +361,10 @@ static CGPathRef createPathFromXYValues(NSArray *xValues, NSArray *yValues) {
 			oscillationComponent =  cos(omega*t);
 		}
 		
-		if (self.shouldOvershoot) {
-			coefficient =  (startValue - endValue);
-		} else {
-			coefficient = -1*sign*fabsf((startValue - endValue));
+		coefficient =  (startValue - endValue);
+
+		if (!self.shouldOvershoot) {
+			oscillationComponent =  fabsf(oscillationComponent);
 		}
 		
 		value = coefficient * pow(2.71, alpha*t) * oscillationComponent + endValue;
