@@ -50,13 +50,13 @@
 	
 	NSString *keyPath = @"position.y";
 	id finalValue = [NSNumber numberWithFloat:300];
-
 	
 	SKBounceAnimation *bounceAnimation = [SKBounceAnimation animationWithKeyPath:keyPath];
 	bounceAnimation.fromValue = [NSNumber numberWithFloat:bouncingView.center.x];
 	bounceAnimation.toValue = finalValue;
 	bounceAnimation.duration = 0.5f;
 	bounceAnimation.numberOfBounces = 4;
+	bounceAnimation.stiffness = SKBounceAnimationStiffnessLight;
 	bounceAnimation.shouldOvershoot = YES;
 
 	[bouncingView.layer addAnimation:bounceAnimation forKey:@"someKey"];

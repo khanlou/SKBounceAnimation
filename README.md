@@ -24,7 +24,7 @@ We set the value of our keypath to the final value, and then perform the animati
 
 ## Math
 
-The math is simple. Check out the [blogpost](http://khanlou.com/2012/01/cakeyframeanimation-make-it-bounce/) and [the informational post](http://khanlou.com/2012/01/dampers-and-their-role-in-physical-models/) preceding it for exact details, but essentially the system behaves with oscillating exponential decay in the form of the equation: `x = Ae^(-αt)•cos(ωt) + B`.
+To learn more about the math, check out the [blogpost](http://khanlou.com/2012/01/cakeyframeanimation-make-it-bounce/) and [the informational post](http://khanlou.com/2012/01/dampers-and-their-role-in-physical-models/) preceding it for exact details, but essentially the system behaves with oscillating exponential decay in the form of the equation: `x = Ae^(-αt)•cos(ωt) + B`.
 
 A is the difference between start and end values, B is the end value, α is determined by the number of frames required to get the exponential decay portion to close enough to 0, and ω is determined by the number of periods required to get the desired number of bounces.
 

@@ -80,6 +80,7 @@
 		super.keyPath = keyPath;
 		self.numberOfBounces = 2;
 		self.shouldOvershoot = YES;
+		self.stiffness = SKBounceAnimationStiffnessMedium;
 	}
 	return self;
 }
@@ -104,6 +105,15 @@
 - (void) setDuration:(CFTimeInterval)newDuration {
 	[super setDuration:newDuration];
 	[self createValueArray];
+}
+
+- (void) setStiffness:(SKBounceAnimationStiffness)stiffness {
+	[super setValue:@(stiffness) forKey:@"stifnessKey"];
+	[self createValueArray];
+}
+
+- (SKBounceAnimationStiffness) stiffness {
+	return [[super valueForKey:@"stifnessKey"] integerValue];
 }
 
 - (void) setNumberOfBounces:(NSUInteger)newNumberOfBounces {
@@ -152,7 +162,6 @@
 		} else if ([self.fromValue isKindOfClass:[UIColor class]] && [self.toValue isKindOfClass:[UIColor class]]) {
 			const CGFloat *fromComponents = CGColorGetComponents(((UIColor*)self.fromValue).CGColor);
 			const CGFloat *toComponents = CGColorGetComponents(((UIColor*)self.toValue).CGColor);
-			//			NSLog(@"thing");
 			//			NSLog(@"from %0.2f %0.2f %0.2f %0.2f", fromComponents[0], fromComponents[1], fromComponents[2], fromComponents[3]);
 			//			NSLog(@"to %0.2f %0.2f %0.2f %0.2f", toComponents[0], toComponents[1], toComponents[2], toComponents[3]);
 			self.values = [self createColorArrayFromRed:
@@ -321,7 +330,6 @@ static CGPathRef createPathFromXYValues(NSArray *xValues, NSArray *yValues) {
 						    green:[[greenValues objectAtIndex:i] floatValue]
 							blue:[[blueValues objectAtIndex:i] floatValue]
 						    alpha:[[alphaValues objectAtIndex:i] floatValue]];
-		//		NSLog(@"a color %@", value);
 		[values addObject:(id)value.CGColor];
 	}
 	return values;
@@ -330,11 +338,18 @@ static CGPathRef createPathFromXYValues(NSArray *xValues, NSArray *yValues) {
 - (NSArray*) valueArrayForStartValue:(CGFloat)startValue endValue:(CGFloat)endValue {
 	NSInteger steps = 60*self.duration; //60 fps desired
 	
+	CGFloat stiffnessCoefficient = 0.1f;
+	if (self.stiffness == SKBounceAnimationStiffnessHeavy) {
+		stiffnessCoefficient = 0.001f;
+	} else if (self.stiffness == SKBounceAnimationStiffnessLight) {
+		stiffnessCoefficient = 5.0f;
+	}
+	
 	CGFloat alpha = 0;
 	if (startValue == endValue) {
-		alpha = log2f(0.1f)/steps;
+		alpha = log2f(stiffnessCoefficient)/steps;
 	} else {
-		alpha = log2f(0.1f/fabsf(endValue - startValue))/steps;
+		alpha = log2f(stiffnessCoefficient/fabsf(endValue - startValue))/steps;
 	}
 	if (alpha > 0) {
 		alpha = -1.0f*alpha;
