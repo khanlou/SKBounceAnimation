@@ -90,11 +90,8 @@
 	[self createValueArray];
 }
 
-- (void) setByValue:(id)newByValue {
-	[super setValue:newByValue forKey:@"byValueKey"];
-	//don't know if this is to spec
-	self.toValue = [NSNumber numberWithFloat:[self.fromValue floatValue] + [self.byValue floatValue]];
-	[self createValueArray];
+- (id) fromValue {
+	return [super valueForKey:@"fromValueKey"];
 }
 
 - (void) setToValue:(id)newToValue {
@@ -102,9 +99,22 @@
 	[self createValueArray];
 }
 
+- (id) toValue {
+	return [super valueForKey:@"toValueKey"];
+}
+
 - (void) setDuration:(CFTimeInterval)newDuration {
 	[super setDuration:newDuration];
 	[self createValueArray];
+}
+
+- (void) setNumberOfBounces:(NSUInteger)newNumberOfBounces {
+	[super setValue:[NSNumber numberWithUnsignedInt:newNumberOfBounces] forKey:@"numberOfBouncesKey"];
+	[self createValueArray];
+}
+
+- (NSUInteger) numberOfBounces {
+	return [[super valueForKey:@"numberOfBouncesKey"] unsignedIntValue];
 }
 
 - (void) setStiffness:(SKBounceAnimationStiffness)stiffness {
@@ -114,15 +124,6 @@
 
 - (SKBounceAnimationStiffness) stiffness {
 	return [[super valueForKey:@"stifnessKey"] integerValue];
-}
-
-- (void) setNumberOfBounces:(NSUInteger)newNumberOfBounces {
-	[super setValue:[NSNumber numberWithUnsignedInt:newNumberOfBounces] forKey:@"numBounces"];
-	[self createValueArray];
-}
-
-- (NSUInteger) numberOfBounces {
-	return [[super valueForKey:@"numBounces"] unsignedIntValue];
 }
 
 - (void) setShouldOvershoot:(BOOL)newShouldOvershoot {
@@ -141,18 +142,6 @@
 
 - (BOOL) shake {
 	return [[super valueForKey:@"shakeKey"] boolValue];
-}
-
-- (id) fromValue {
-	return [super valueForKey:@"fromValueKey"];
-}
-
-- (id) byValue {
-	return [super valueForKey:@"byValueKey"];
-}
-
-- (id) toValue {
-	return [super valueForKey:@"toValueKey"];
 }
 
 - (void) createValueArray {
