@@ -8,7 +8,7 @@
 
 #import "ScaleBounceController.h"
 
-#define kSKStartingScale 0.75f
+#define kSKStartingScale 0.7f
 
 @interface ScaleBounceController ()
 
@@ -66,7 +66,7 @@
 	}
 	
 	CGFloat animationDuration = 0.30f;
-	[UIView animateWithDuration:0.1f delay:0 options:UIViewAnimationCurveEaseOut animations:^{
+	[UIView animateWithDuration:0.10f delay:0 options:UIViewAnimationCurveEaseOut animations:^{
 		bouncingView.alpha = 1.0f;
 	} completion:^(BOOL finished) {
 		
