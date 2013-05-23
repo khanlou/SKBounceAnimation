@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A99EF551679496D00DE4880 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A99EF541679496D00DE4880 /* Default-568h@2x.png */; };
+		1AB18ED4174DA0EE00BD001D /* uialertview-Blocks.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AB18ED3174DA0EE00BD001D /* uialertview-Blocks.png */; };
 		347F5D89158BA4840058BC21 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347F5D88158BA4840058BC21 /* UIKit.framework */; };
 		347F5D8B158BA4840058BC21 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347F5D8A158BA4840058BC21 /* Foundation.framework */; };
 		347F5D8D158BA4840058BC21 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347F5D8C158BA4840058BC21 /* CoreGraphics.framework */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		1A99EF541679496D00DE4880 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		1AB18ED3174DA0EE00BD001D /* uialertview-Blocks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "uialertview-Blocks.png"; sourceTree = "<group>"; };
 		347F5D84158BA4840058BC21 /* SKBounceAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SKBounceAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		347F5D88158BA4840058BC21 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		347F5D8A158BA4840058BC21 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -169,6 +171,7 @@
 				34C2E37315DC396C00310CA1 /* SizeBounceController.m */,
 				347F5DBD158BA4A80058BC21 /* SKBounceAnimation.h */,
 				347F5DBE158BA4A80058BC21 /* SKBounceAnimation.m */,
+				1AB18ED3174DA0EE00BD001D /* uialertview-Blocks.png */,
 				347F5D8F158BA4840058BC21 /* Supporting Files */,
 			);
 			path = SKBounceAnimation;
@@ -278,6 +281,7 @@
 				347F5D93158BA4840058BC21 /* InfoPlist.strings in Resources */,
 				347F5D9F158BA4840058BC21 /* SKRootViewController.xib in Resources */,
 				1A99EF551679496D00DE4880 /* Default-568h@2x.png in Resources */,
+				1AB18ED4174DA0EE00BD001D /* uialertview-Blocks.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
