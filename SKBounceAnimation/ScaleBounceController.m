@@ -65,7 +65,7 @@
 		return;
 	}
 	
-	CGFloat animationDuration = 0.30f;
+	CGFloat animationDuration = 0.28f;
 	[UIView animateWithDuration:0.10f delay:0 options:UIViewAnimationCurveEaseOut animations:^{
 		bouncingView.alpha = 1.0f;
 	} completion:^(BOOL finished) {
