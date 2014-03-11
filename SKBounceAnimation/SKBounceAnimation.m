@@ -52,6 +52,10 @@
  
  */
 
+SKBounceAnimationStiffness SKBounceAnimationStiffnessLight  = 5.f;
+SKBounceAnimationStiffness SKBounceAnimationStiffnessMedium = .1f;
+SKBounceAnimationStiffness SKBounceAnimationStiffnessHeavy  = .001f;
+
 @interface SKBounceAnimation (Private)
 
 - (void) createValueArray;
@@ -123,7 +127,7 @@
 }
 
 - (SKBounceAnimationStiffness) stiffness {
-	return [[super valueForKey:@"stifnessKey"] integerValue];
+	return [[super valueForKey:@"stifnessKey"] floatValue];
 }
 
 - (void) setShouldOvershoot:(BOOL)newShouldOvershoot {
@@ -327,12 +331,7 @@ static CGPathRef createPathFromXYValues(NSArray *xValues, NSArray *yValues) {
 - (NSArray*) valueArrayForStartValue:(CGFloat)startValue endValue:(CGFloat)endValue {
 	NSInteger steps = 60*self.duration; //60 fps desired
 	
-	CGFloat stiffnessCoefficient = 0.1f;
-	if (self.stiffness == SKBounceAnimationStiffnessHeavy) {
-		stiffnessCoefficient = 0.001f;
-	} else if (self.stiffness == SKBounceAnimationStiffnessLight) {
-		stiffnessCoefficient = 5.0f;
-	}
+	CGFloat stiffnessCoefficient = self.stiffness;
 	
 	CGFloat alpha = 0;
 	if (startValue == endValue) {
