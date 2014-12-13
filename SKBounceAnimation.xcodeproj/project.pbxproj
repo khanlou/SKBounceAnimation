@@ -36,6 +36,8 @@
 		34C2E37C15DC396D00310CA1 /* SizeBounceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34C2E37315DC396C00310CA1 /* SizeBounceController.m */; };
 		34EBC79315DD487F00170F01 /* ScaleRotateBounceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EBC79215DD487F00170F01 /* ScaleRotateBounceController.m */; };
 		34EBC79415DD487F00170F01 /* ScaleRotateBounceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34EBC79215DD487F00170F01 /* ScaleRotateBounceController.m */; };
+		93F951831A396F3C003F8485 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347F5DC4158BACB40058BC21 /* QuartzCore.framework */; };
+		93F951841A396F47003F8485 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 347F5D8C158BA4840058BC21 /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +106,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93F951841A396F47003F8485 /* CoreGraphics.framework in Frameworks */,
+				93F951831A396F3C003F8485 /* QuartzCore.framework in Frameworks */,
 				347F5DA7158BA4840058BC21 /* SenTestingKit.framework in Frameworks */,
 				347F5DA8158BA4840058BC21 /* UIKit.framework in Frameworks */,
 				347F5DA9158BA4840058BC21 /* Foundation.framework in Frameworks */,
@@ -117,7 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				1A99EF541679496D00DE4880 /* Default-568h@2x.png */,
-				347F5DC4158BACB40058BC21 /* QuartzCore.framework */,
 				347F5D8E158BA4840058BC21 /* SKBounceAnimation */,
 				347F5DAC158BA4840058BC21 /* SKBounceAnimationTests */,
 				347F5D87158BA4840058BC21 /* Frameworks */,
@@ -137,6 +140,7 @@
 		347F5D87158BA4840058BC21 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				347F5DC4158BACB40058BC21 /* QuartzCore.framework */,
 				347F5D88158BA4840058BC21 /* UIKit.framework */,
 				347F5D8A158BA4840058BC21 /* Foundation.framework */,
 				347F5D8C158BA4840058BC21 /* CoreGraphics.framework */,
@@ -241,7 +245,7 @@
 			name = SKBounceAnimationTests;
 			productName = SKBounceAnimationTests;
 			productReference = 347F5DA5158BA4840058BC21 /* SKBounceAnimationTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
 
